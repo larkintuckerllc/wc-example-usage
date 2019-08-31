@@ -31,5 +31,7 @@
     "webpack-cli": "^3.3.7",
     "webpack-dev-server": "^3.8.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "wc-example": "git://github.com/larkintuckerllc/wc-example.git#0.1.0"
+  }
 }
