@@ -34,6 +34,6 @@
   },
   "dependencies": {
     "@webcomponents/webcomponentsjs": "^2.2.10",
-    "wc-example": "git://github.com/larkintuckerllc/wc-example.git#0.1.2"
+    "wc-example": "git://github.com/larkintuckerllc/wc-example.git#0.1.3"
   }
 }
