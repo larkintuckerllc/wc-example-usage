@@ -2,6 +2,8 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const path = require('path');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const NullPlugin = require('webpack-null-plugin');
 
 module.exports = env => {
   return ({
@@ -38,6 +40,7 @@ module.exports = env => {
       publicPath: '/',
     },
     plugins: [
+      env.MODE !== 'development' ? new BundleAnalyzerPlugin() : new NullPlugin(),
       new CleanWebpackPlugin(),
       new CopyPlugin([
         { from: 'node_modules/@webcomponents/webcomponentsjs', to: 'webcomponentsjs' },
@@ -45,7 +48,7 @@ module.exports = env => {
       new HtmlWebpackPlugin({
         inject: 'head',
         template: 'public/index.html'
-      })
+      }),
     ]
   });
 };
